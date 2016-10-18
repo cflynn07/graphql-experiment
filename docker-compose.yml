@@ -29,11 +29,11 @@ mysql:
   environment:
     MYSQL_ROOT_PASSWORD: password
 
-#migrations:
-#  container_name: migrations
-#  image: mysql:5.7.12
-#  volumes:
-#    - ../migrations/:/migrations
-#  command: sh -c 'mysql -h mysql -u root -ppassword mydb < /migrations/migration.sql'
-#  links:
-#    - mysql
+migrations:
+  container_name: migrations
+  image: mysql:5.7.12
+  volumes:
+    - ./migrations:/migrations
+  command: sh -c 'mysql -h mysql -u root -ppassword mydb < /migrations/migrations.sql'
+  links:
+    - mysql
