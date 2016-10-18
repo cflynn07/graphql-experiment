@@ -8,17 +8,16 @@ nginx:
   environment:
     - DEFAULT_HOST=api.local
 
-  api:
+api:
   container_name: api
   build: ./
   ports:
     - "3000:3000"
-  # volumes:
-  #  - ../api:/go/src/gitlab.com/cflynn07/api
-  # command: 
+  volumes:
+    - ./api:/api
   environment:
     - VIRTUAL_HOST=api.local
-    - PORT: 3000
+    - PORT=3000
   links:
     - mysql
 
