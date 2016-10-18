@@ -150,4 +150,4 @@ fragment basicFields on Account {
 ### GraphiQL Web Explorer
 Since the schema for our graphql service is defined, we get documentation and tools for free. One tool is `GraphiQL` - 
 a web based service inspection tool that loads when the graphql endpoint is loaded in a web browser.
-[./graphiql_example.png](./graphiql_example.png)
+![./graphiql_example.png](./graphiql_example.png)
