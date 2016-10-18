@@ -1,5 +1,9 @@
 # GraphQL Experiment
 
+## How to use this project
+1. `docker-compose up` to start all services
+2. To access GraphiQL, navigate web browser to http://localhost/graphiql (assuming use of docker native, adjust host if using legacy docker)
+
 ## Example Queries
 
 ### Simple Query
