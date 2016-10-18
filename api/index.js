@@ -5,7 +5,7 @@ const {
   GraphQLObjectType
 } = require('graphql')
 
-const queries = require('./queries')
+const queries = require('lib/queries')
 
 const app = express()
 

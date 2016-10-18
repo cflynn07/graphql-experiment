@@ -5,23 +5,10 @@ const {
   GraphQLString
 } = require('graphql')
 
-const TypeAccount = new GraphQLObjectType({
-  name: 'Account',
-  fields: {
-    from: {
-      type: GraphQLString
-    },
-    subject: {
-      type: GraphQLString
-    },
-    body: {
-      type: GraphQLString
-    }
-  }
-})
+const Account = require('lib/types/account')
 
 module.exports.accounts = {
-  type: TypeAccount,
+  type: Account,
   args: {
     id: {
       name: 'id',
