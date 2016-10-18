@@ -1,18 +1,17 @@
+# GraphQL Experiment
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [GraphQL Experiment](#graphql-experiment)
-  - [How to use this project](#how-to-use-this-project)
-  - [Example Queries](#example-queries)
-    - [Simple Query](#simple-query)
-    - [Aliases](#aliases)
-    - [Fragments](#fragments)
-    - [GraphiQL Web Explorer](#graphiql-web-explorer)
+- [How to use this project](#how-to-use-this-project)
+- [Example Queries](#example-queries)
+  - [Simple Query](#simple-query)
+  - [Aliases](#aliases)
+  - [Fragments](#fragments)
+  - [GraphiQL Web Explorer](#graphiql-web-explorer)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# GraphQL Experiment
 
 ## How to use this project
 1. `docker-compose up` to start all services
