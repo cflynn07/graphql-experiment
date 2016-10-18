@@ -16,14 +16,20 @@ api:
   volumes:
     - ./api:/api
   environment:
-    - VIRTUAL_HOST=api.local
+    - MYSQL_DATABASE=mydb
+    - MYSQL_HOST=mysql
+    - MYSQL_PASSWORD=password
+    - MYSQL_USER=root
     - PORT=3000
+    - VIRTUAL_HOST=api.local
   links:
     - mysql
 
 mysql:
   container_name: mysql
   image: mysql:5.7.12
+  expose:
+    - 3306
   ports:
     - "3306:3306"
   environment:
