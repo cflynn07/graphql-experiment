@@ -5,10 +5,11 @@ const {
   GraphQLString
 } = require('graphql')
 
-const Account = require('lib/types/account')
+const AccountObjectType = require('lib/types/account')
+const { Account } = require('lib/models')
 
 module.exports.accounts = {
-  type: Account,
+  type: AccountObjectType,
   args: {
     id: {
       name: 'id',
@@ -16,11 +17,6 @@ module.exports.accounts = {
     }
   },
   resolve: (root, params, options) => {
-    console.log('root', root)
-    console.log('params', params)
-
-    return {
-      owner: 'George Jetson ' + params.id
-    }
+    return Account.findById(params.id)
   }
 }
