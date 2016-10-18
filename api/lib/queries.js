@@ -20,9 +20,7 @@ module.exports.accounts = {
     console.log('params', params)
 
     return {
-      from: 'test from ' + params.id,
-      subject: 'test subject',
-      body: 'test body'
+      owner: 'George Jetson ' + params.id
     }
   }
 }
