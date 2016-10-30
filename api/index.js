@@ -6,13 +6,18 @@ const {
 } = require('graphql')
 
 const queries = require('lib/queries')
+const mutations = require('lib/mutations')
 
 const app = express()
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
-    name: 'RootQueryType',
+    name: 'Query',
     fields: queries
+  }),
+  mutation: new GraphQLObjectType({
+    name: 'Mutation',
+    fields: mutations
   })
 })
 

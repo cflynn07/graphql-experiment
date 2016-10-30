@@ -1,6 +1,7 @@
 const {
   GraphQLID,
-  GraphQLNonNull
+  GraphQLNonNull,
+  GraphQLString
 } = require('graphql')
 
 const AccountObjectType = require('lib/types/account')
@@ -9,10 +10,13 @@ const { Account } = require('lib/models')
 module.exports.account = {
   type: AccountObjectType,
   args: {
-    id: {
-      name: 'id',
-      type: new GraphQLNonNull(GraphQLID)
+    name: {
+      type: GraphQLString
     }
   },
-  resolve: (root, params) => Account.findById(params.id)
+  resolve: (root, params) => {
+    return Account.create({
+      name: params.name
+    })
+  }
 }
