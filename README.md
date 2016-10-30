@@ -169,6 +169,16 @@ mutation {
   }
 }
 
+# Query (curl)
+curl 'http://localhost/graphql?' \
+-H 'Accept-Encoding: gzip, deflate, br' \
+-H 'Accept-Language: en-US,en;q=0.8' \
+-H 'content-type: application/json' \
+-H 'accept: application/json' \
+-H 'Connection: keep-alive' \
+--data-binary '{"query":"mutation {\n  account(name: \"Testing 12345a\") {\n    id,\n    name\n  }\n}","variables":""}' \
+--compressed
+
 # Response
 {
   "data": {
