@@ -6,10 +6,13 @@
 
 - [How to use this project](#how-to-use-this-project)
 - [Example Queries](#example-queries)
+- [Queries](#queries)
   - [Simple Query](#simple-query)
   - [Aliases](#aliases)
   - [Fragments](#fragments)
   - [GraphiQL Web Explorer](#graphiql-web-explorer)
+- [Mutations](#mutations)
+  - [Add an account](#add-an-account)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
