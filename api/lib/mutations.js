@@ -14,9 +14,5 @@ module.exports.account = {
       type: GraphQLString
     }
   },
-  resolve: (root, params) => {
-    return Account.create({
-      name: params.name
-    })
-  }
+  resolve: (root, params) => Account.create(params)
 }

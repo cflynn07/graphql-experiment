@@ -19,6 +19,8 @@
 
 ## Example Queries
 
+## Queries
+
 ### Simple Query
 ```js
 # Query
@@ -151,3 +153,26 @@ fragment basicFields on Account {
 Since the schema for our graphql service is defined, we get documentation and tools for free. One tool is `GraphiQL` - 
 a web based service inspection tool that loads when the graphql endpoint is loaded in a web browser.
 ![./graphiql_example.png](./graphiql_example.png)
+
+## Mutations
+
+### Add an account
+```
+# Query
+mutation {
+  account(name: "Testing 12345a") {
+    id,
+    name
+  }
+}
+
+# Response
+{
+  "data": {
+    "account": {
+      "id": 10,
+      "name": "Testing 12345"
+    }
+  }
+}
+```
