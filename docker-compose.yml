@@ -33,6 +33,7 @@ mysql:
   ports:
     - "3306:3306"
   environment:
+    MYSQL_DATABASE: mydb
     MYSQL_ROOT_PASSWORD: password
 
 migrations:
@@ -40,6 +41,6 @@ migrations:
   image: mysql:5.7.12
   volumes:
     - ./migrations:/migrations
-  command: sh -c 'sleep 5 && mysql -h mysql -u root -ppassword mydb < /migrations/migrations.sql'
+  command: /migrations/migrate.sh
   links:
     - mysql
