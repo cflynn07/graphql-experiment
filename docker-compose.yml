@@ -6,13 +6,18 @@ nginx:
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock:ro
   environment:
-    - DEFAULT_HOST=api.local
+    - DEFAULT_HOST=api.dev
+  links:
+    - api
+    - web
 
 api:
   container_name: api
-  build: ./
+  build: ./api
   ports:
     - "3000:3000"
+  expose:
+    - 3000
   volumes:
     - ./api:/api
   environment:
@@ -21,9 +26,22 @@ api:
     - MYSQL_PASSWORD=password
     - MYSQL_USER=root
     - PORT=3000
-    - VIRTUAL_HOST=api.local
+    - VIRTUAL_HOST=api.dev
   links:
     - mysql
+
+web:
+  container_name: web
+  build: ./web
+  ports:
+    - "3001:3001"
+  expose:
+    - 3001
+  volumes:
+    - ./web:/web
+  environment:
+    - PORT=3001
+    - VIRTUAL_HOST=web.dev
 
 mysql:
   container_name: mysql
