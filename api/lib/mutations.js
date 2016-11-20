@@ -4,8 +4,8 @@ const {
   GraphQLString
 } = require('graphql')
 
-const AccountObjectType = require('lib/types/account')
-const { Account } = require('lib/models')
+const AccountObjectType = require('./types/account')
+const { Account } = require('./models')
 
 module.exports.account = {
   type: AccountObjectType,

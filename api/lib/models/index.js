@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const fs = require('fs')
 const path = require('path')
 
-const sequelize = require('lib/utils/sequelize')
+const sequelize = require('../utils/sequelize')
 
 const db = {}
 

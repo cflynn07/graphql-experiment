@@ -14,8 +14,8 @@ nginx:
 api:
   container_name: api
   build: ./api
-  ports:
-    - "3000:3000"
+  #ports:
+  #  - "3000:3000"
   expose:
     - 3000
   volumes:
@@ -33,14 +33,12 @@ api:
 web:
   container_name: web
   build: ./web
-  ports:
-    - "3001:3001"
   expose:
-    - 3001
+    - 80
   volumes:
     - ./web:/web
   environment:
-    - PORT=3001
+    - PORT=80
     - VIRTUAL_HOST=web.dev
 
 mysql:

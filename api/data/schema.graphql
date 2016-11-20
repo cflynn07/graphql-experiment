@@ -1,0 +1,19 @@
+type Account {
+  id: ID
+  name: String
+  emails: [Email]
+}
+
+type Email {
+  from: String
+  subject: String
+  body: String
+}
+
+type Mutation {
+  account(name: String): Account
+}
+
+type Query {
+  account(id: ID!): Account
+}

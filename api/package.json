@@ -10,10 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-relay-plugin": "^0.9.3",
+    "cors": "^2.8.1",
     "express": "^4.14.0",
     "express-graphql": "^0.5.4",
     "graphql": "^0.7.2",
     "mysql": "^2.11.1",
+    "react-hot-loader": "^3.0.0-beta.6",
     "sequelize": "^3.24.4"
   },
   "devDependencies": {

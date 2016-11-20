@@ -6,7 +6,7 @@ const {
   GraphQLString
 } = require('graphql')
 
-const Email = require('lib/types/email')
+const Email = require('./email')
 
 module.exports = new GraphQLObjectType({
   name: 'Account',

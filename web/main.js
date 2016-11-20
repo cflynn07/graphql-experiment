@@ -1,19 +1,14 @@
-import About from './About.jsx'
-import App from './App.jsx'
-import Contact from './Contact.jsx'
-import Home from './Home.jsx'
-
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
+import Relay from 'react-relay'
 
-ReactDOM.render((
-  <Router history = {hashHistory}>
-    <Route path = "/" component = {App}>
-      <IndexRoute component = {Home}/>
-      <Route path = "home" component = {Home}/>
-      <Route path = "about" component = {About}/>
-      <Route path = "contact" component = {Contact}/>
-    </Route>
-  </Router>
-), document.getElementById('app'))
+Relay.injectNetworkLayer(
+  new Relay.DefaultNetworkLayer('http://api.dev/graphql')
+)
+
+import App from './components/App.jsx'
+
+ReactDOM.render(<Relay.RootContainer
+  Component = {App.Container}
+  route = {App.route}
+/>, document.getElementById('app'))
